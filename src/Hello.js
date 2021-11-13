@@ -1,12 +1,21 @@
 import React from 'react';
 
-const Hello = (props) => {
+const Hello = ({ color, name}) => {
     return (
-        <>
-         안녕하세요 {props.name}
+        <div style={
+            {
+                color
+            }
+        }>
+         안녕하세요 {name}
          <br />
-        </>
+        </div>
     );
 };
+
+Hello.defaultProps = {
+    name: '이름없음',
+    color: 'skyblue'
+}
 
 export default Hello;
