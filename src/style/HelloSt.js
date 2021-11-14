@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Name_color = styled.div`
+export const Namecolor = styled.div`
     color: ${
         props => props.color || "skyblue"
     };

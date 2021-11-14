@@ -1,12 +1,13 @@
 import React from 'react';
 import * as S from './style/HelloSt';
 
-const Hello = ({size, color, name}) => {
+const Hello = ({size, color, name, isSpecial}) => {
     return (
-        <S.Name_color color={color} size={size}>
+        <S.Namecolor color={color} size={size}>
+            { isSpecial && <b>*</b>}
         안녕하세요 {name}
         <br />
-        </S.Name_color>
+        </S.Namecolor>
     );
 };
 
