@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './style/HelloSt';
+import * as S from '../style/HelloSt';
 
 const Hello = ({size, color, name, isSpecial}) => {
     return (
