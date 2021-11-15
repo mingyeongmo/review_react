@@ -1,13 +1,15 @@
 import React from 'react';
 import Counter from './components/Counter';
 import Hello from './components/Hello';
+import InputSample from './components/InputSample';
 import Wrapper from './Wrapper';
 
 function App() {
   
   return (
     <>
-      <Counter/>
+      <InputSample />
+      {/* <Counter/> */}
     
       {/* <Wrapper>
         <Hello name="경모" color="pink" size="1.5rem" isSpecial={true}/> */}
