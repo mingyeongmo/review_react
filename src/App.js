@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 // import Counter from './components/Counter';
 // import Hello from './components/Hello';
 // import InputSample from './components/InputSample';
@@ -6,10 +6,34 @@ import React from 'react';
 import UserList from './components/UserList'
 
 function App() {
+
+  const users = [
+    {
+        id: 1,
+        username: 'minmo',
+        email: 'mingyeongmp@naver.com'
+    },
+    {
+        id: 2,
+        username: 'moci',
+        email: 'moci@gmail.com'
+    },
+    {
+        id: 3,
+        username: 'bye',
+        email: 'bye@naver.com'
+    }
+];
+
+  const nextId = useRef(4);
+  const onCreate = () => {
+
+    nextId.current += 1;
+  }
   
   return (
     <>
-      <UserList />
+      <UserList users={users} />
       {/* <InputSample /> */}
       {/* <Counter/> */}
     

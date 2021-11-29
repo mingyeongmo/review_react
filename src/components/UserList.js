@@ -8,25 +8,7 @@ const User = ({ user }) => {
     )
 }
 
-const UserList = () => {
-
-    const users = [
-        {
-            id: 1,
-            username: 'minmo',
-            email: 'mingyeongmp@naver.com'
-        },
-        {
-            id: 2,
-            username: 'moci',
-            email: 'moci@gmail.com'
-        },
-        {
-            id: 3,
-            username: 'bye',
-            email: 'bye@naver.com'
-        }
-    ];
+const UserList = ( {users} ) => {
 
     return (
         <>
