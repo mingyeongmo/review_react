@@ -1,14 +1,16 @@
 import React from 'react';
-import Counter from './components/Counter';
-import Hello from './components/Hello';
-import InputSample from './components/InputSample';
-import Wrapper from './Wrapper';
+// import Counter from './components/Counter';
+// import Hello from './components/Hello';
+// import InputSample from './components/InputSample';
+// import Wrapper from './Wrapper';
+import UserList from './components/UserList'
 
 function App() {
   
   return (
     <>
-      <InputSample />
+      <UserList />
+      {/* <InputSample /> */}
       {/* <Counter/> */}
     
       {/* <Wrapper>
