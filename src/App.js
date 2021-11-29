@@ -27,17 +27,20 @@ function App() {
     {
         id: 1,
         username: 'minmo',
-        email: 'mingyeongmp@naver.com'
+        email: 'mingyeongmp@naver.com',
+        active: true
     },
     {
         id: 2,
         username: 'moci',
-        email: 'moci@gmail.com'
+        email: 'moci@gmail.com',
+        active: false
     },
     {
         id: 3,
         username: 'bye',
-        email: 'bye@naver.com'
+        email: 'bye@naver.com',
+        active: false
     }
 ]);
 
@@ -60,6 +63,15 @@ function App() {
   
   const onRemove = id => {
     setUsers(users.filter(user => user.id !== id));
+    // 파라미터로 받은 user.id가 아닌걸 setUsers로 설정한다.
+  };
+
+  const onToggle = id => {
+    setUsers(
+      users.map(user =>
+        user.id === id ? { ...user, active: !user.active } : user
+        )
+    );
   };
 
   return (
@@ -70,7 +82,7 @@ function App() {
         onChange={onChange}
         onCreate={onCreate}
       />
-      <UserList users={users} onRemove={onRemove}/>
+      <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
       {/* <InputSample /> */}
       {/* <Counter/> */}
     
