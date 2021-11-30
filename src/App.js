@@ -64,7 +64,7 @@ function App() {
       email: ''
     });
     nextId.current += 1;
-  });
+  }, [users,username,email]);
   
   const onRemove = useCallback(
     id => {
