@@ -12,7 +12,6 @@ function countActiveUsers(users) {
 }
 
 function App() {
-
   const [inputs, setInputs] = useState({
     username: '',
     email: ''
@@ -20,13 +19,13 @@ function App() {
 
   const { username, email } = inputs;
 
-  const onChange = e => {
+  const onChange = useCallback(e => {
     const { name, value } = e.target;
-    setInputs({
+    setInputs(inputs => ({
       ...inputs,
       [name]: value
-    });
-  };
+    }));
+  }, []);
 
   const [users, setUsers] = useState([
     {
@@ -56,34 +55,30 @@ function App() {
       username,
       email
     };
-    setUsers([...users, user]);
-  //setUsers(users.concat(user));
+    setUsers(users => users.concat(user));
+    // setUsers([...users, user]);
+  
 
     setInputs({
       username: '',
       email: ''
     });
     nextId.current += 1;
-  }, [users,username,email]);
+  }, [username,email]);
   
-  const onRemove = useCallback(
-    id => {
-    setUsers(users.filter(user => user.id !== id));
+  const onRemove = useCallback(id => {
+    setUsers(users => users.filter(user => user.id !== id));
     // 파라미터로 받은 user.id가 아닌걸 setUsers로 설정한다.
-    },
-    [users]
-  );
+    },[]);
 
   const onToggle = useCallback(
     id => {
-    setUsers(
+    setUsers(users =>
       users.map(user =>
         user.id === id ? { ...user, active: !user.active } : user
         )
     );
-    },
-    [users]
-  );
+  },[]);
   const count = useMemo(() => countActiveUsers(users), [users]);
   return (
     <>
